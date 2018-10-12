@@ -1,9 +1,11 @@
 import numpy as np
 import os.path
+from normalizer import normalizer
 
 def data_load(Config):
     path = Config['data_set']
-    text = open(path).read().lower()
+    text = open(path).read()
+    text = normalizer(text)
     print('courpus length:', len(text))
 
     chars = set(text)
