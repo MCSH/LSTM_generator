@@ -12,6 +12,10 @@ If there is a model file, the neural network will continue working on that, othe
 
 Run `textgen.py` to train the model and run `run.py` in order to print out samples based on the trained model.
 
+## Note on stateful machines
+
+As of this version, stateful machines must run with batch size 1. This makes each iteration very slow. Sorry for that!
+
 ## TODO
 * Save the iteration for the model, so that when resumed, it would continue counting and not reset to 1.
 * Save the model name based on the input file

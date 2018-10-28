@@ -17,6 +17,7 @@ save_iter = Config['save_iter']
 print_iter = Config['print_iter']
 
 def on_epoch_end(epoch, _):
+    model.reset_states()
     epoch += 1
     print()
     print('Iteration', epoch)

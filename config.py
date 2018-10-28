@@ -6,8 +6,12 @@ Config = {
     'sample_size': 400,
     'epoch_count': 60,
     'batch_size': 128,
+    'stateful': False,
     'save_iter': 1, # How many iterations should it pass before saving the model?
     'print_iter': 3, # How many interation should it pass before printing sample?
     'save_on_finish': True,
     'diversity': [0.2, 0.5, 1.0, 1.2]
 }
+
+if Config['stateful']:
+    Config['batch_size'] = 1

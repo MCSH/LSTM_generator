@@ -20,6 +20,7 @@ def data_load(Config):
     for i in range(0, len(text) - maxlen, step):
         sentences.append(text[i: i+maxlen])
         next_chars.append(text[i+maxlen])
+
     print('nb sequences:', len(sentences))
 
     print('vectorization...')

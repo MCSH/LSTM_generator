@@ -14,13 +14,14 @@ def get_model(Config, maxlen, chars):
         print('Build model...')
         LSTM_size = Config['LSTM_size']
         LSTM_count = Config['LSTM_count']
+        LSTM_STATEFUL = Config['stateful']
         model = Sequential()
-        model.add(LSTM(LSTM_size, return_sequences=True, input_shape=(maxlen, len(chars))))
+        model.add(LSTM(LSTM_size, return_sequences=True, input_shape=(maxlen, len(chars)), batch_size=Config['batch_size'], stateful=LSTM_STATEFUL))
         model.add(Dropout(0.2))
         for i in range(LSTM_count - 2):
-            model.add(LSTM(LSTM_size, return_sequences=True))
+            model.add(LSTM(LSTM_size, return_sequences=True, stateful=LSTM_STATEFUL))
             model.add(Dropout(0.2))
-        model.add(LSTM(LSTM_size, return_sequences=False))
+        model.add(LSTM(LSTM_size, return_sequences=False, stateful=LSTM_STATEFUL))
         model.add(Dropout(0.2))
         model.add(Dense(len(chars)))
         model.add(Activation('softmax'))
