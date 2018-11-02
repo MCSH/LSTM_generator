@@ -17,9 +17,9 @@ Run `textgen.py` to train the model and run `run.py` in order to print out sampl
 As of this version, stateful machines must run with batch size 1. This makes each iteration very slow. Sorry for that!
 
 ## TODO
-* Save the iteration for the model, so that when resumed, it would continue counting and not reset to 1.
-* Save the model name based on the input file
-* Write a better Readme
-* Write better normalizer
-* Provide some sample datasets
-* Write more TODOs
+ - [ ] Save the iteration for the model, so that when resumed, it would continue counting and not reset to 1.
+ - [ ] Save the model name based on the input file
+ - [ ] Write a better Readme
+ - [ ] Write better normalizer
+ - [ ] Provide some sample datasets
+ - [ ] Write more TODOs
